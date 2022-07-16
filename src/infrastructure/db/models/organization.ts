@@ -13,6 +13,10 @@ export const Organization = sequelize.define(
     name: {
       type: DataTypes.STRING(50),
       allowNull: false
+    },
+    status: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   },
   {

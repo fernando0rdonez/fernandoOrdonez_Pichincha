@@ -1,3 +1,3 @@
-import { organizationDTO } from './organizationDTO'
+import organization from './organizationDTO'
 
-export default { organizationDTO }
+export default { organization }

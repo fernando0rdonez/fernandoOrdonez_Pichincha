@@ -1,7 +1,10 @@
+import { Organization } from '../../infrastructure/db/models/organization'
 import { ResponseCaseUse } from '../interfaces/common'
 
 const list = async () :Promise<ResponseCaseUse> => {
-  return { data: {}, error: true }
+  const organitations = await Organization.findAll({})
+
+  return { data: organitations, error: false }
 }
 
 export { list }

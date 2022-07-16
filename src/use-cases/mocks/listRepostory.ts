@@ -1,12 +1,6 @@
-interface Repository{
-  id: number
-  state: number
-}
-interface ListRepositories {
-  repositories: Repository[]
-}
+import { ListRepositoriesMock } from '../interfaces/mocks'
 
-const listRepository = (): ListRepositories => {
+const listRepository = (): ListRepositoriesMock => {
   return {
     repositories: [
       {

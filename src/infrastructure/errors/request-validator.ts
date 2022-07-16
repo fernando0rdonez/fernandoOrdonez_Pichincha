@@ -9,8 +9,9 @@ export class RequestValidateError extends CustomError {
   }
 
   serializateError () {
-    return this.erros.map((error) => {
+    const fields = this.erros.map((error) => {
       return { message: error.msg, field: error.param }
     })
+    return { message: this.message, fields }
   }
 }

@@ -22,8 +22,12 @@ router.post('/', [
 ], requestValidate, async (req: Request, res: Response) => {
   const params = req.body as createOrgDTO
   const useCaseResponse = await useCases.create(params)
-  const response = generateDTO.organization.organizationDTO(useCaseResponse.data)
 
+  if (useCaseResponse.error) {
+    throw new BadRequestError(useCaseResponse.data.message)
+  }
+
+  const response = generateDTO.organization.organizationDTO(useCaseResponse.data)
   success(res, response, 201)
 })
 
@@ -34,9 +38,11 @@ router.put('/:id', [
   const params = req.body as createOrgDTO
   const idOrganization = req.params.id
   const useCaseResponse = await useCases.update(idOrganization, params)
+
   if (useCaseResponse.error) {
     throw new BadRequestError(useCaseResponse.data.message)
   }
+
   const response = generateDTO.organization.organizationDTO(useCaseResponse.data)
   success(res, response, 200)
 })
@@ -44,9 +50,11 @@ router.put('/:id', [
 router.delete('/:id', async (req: Request, res: Response) => {
   const idOrganization = req.params.id
   const useCaseResponse = await useCases.destroy(idOrganization)
+
   if (useCaseResponse.error) {
     throw new BadRequestError(useCaseResponse.data.message)
   }
+
   success(res, useCaseResponse.data, 200)
 })
 

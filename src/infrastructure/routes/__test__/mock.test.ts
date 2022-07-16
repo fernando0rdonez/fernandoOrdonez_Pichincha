@@ -1,5 +1,5 @@
 import request from 'supertest'
-import { server } from '../server'
+import { server } from '../../server'
 
 describe('GET /mock', () => {
   it('should return status 200', async () => {

@@ -1,3 +1,3 @@
-import { listRepository } from './listRepostory'
+import { listRepository } from './list-repostories'
 
 export default { listRepository }

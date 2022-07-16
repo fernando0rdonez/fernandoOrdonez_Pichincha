@@ -5,8 +5,7 @@ const destroy = async (id: string) : Promise<ResponseCaseUse> => {
   const organization = await Organization.findByPk(id)
 
   if (!organization) {
-    // TODO: throw error no content 204
-    return { data: null, error: true }
+    return { data: { message: 'Origanization not found or has been deleted before' }, error: true }
   }
   organization.destroy()
 

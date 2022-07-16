@@ -6,7 +6,7 @@ const update = async (id: string, organizationParams:createOrgDTO) : Promise<Res
   const organization = await Organization.findByPk(id)
 
   if (!organization) {
-    return { data: null, error: true }
+    return { data: { message: 'Origanization not found' }, error: true }
   }
   organization.update({
     name: organizationParams.name,

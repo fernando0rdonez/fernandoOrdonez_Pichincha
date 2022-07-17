@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express'
 import useCases from '../../use-cases/tribe'
-import { success } from '../common/response'
+import { dowload, success } from '../common/response'
 import { BadRequestError } from '../errors/bad-request-error'
 import generateDTO from '../common/dto/'
 import { RepositoryDB, State } from '../../use-cases/interfaces/repository'
@@ -10,7 +10,7 @@ import { query } from 'express-validator'
 import { requestValidate } from '../middleware/request-validate'
 import { QueryParamsTribe } from '../../use-cases/interfaces/common'
 import moment from 'moment'
-import { fetchMockRepository } from '../common/utils'
+import { fetchMockRepository, generateCsv } from '../common/utils'
 import { RepositoryMock } from '../../use-cases/interfaces/mocks'
 const router = express.Router()
 
@@ -40,7 +40,16 @@ router.get('/:id', [
   const listMockRepositories = await fetchMockRepository() as RepositoryMock[]
   const response = generateDTO.repository.ListRepositoriesFromTribeDTO(repositories, organiation, tribe, listMockRepositories)
 
-  success(res, response, 200)
+  if (req.query.download) {
+    try {
+      const url = await generateCsv(response) as string
+      dowload(res, url)
+    } catch (error) {
+      throw new BadRequestError('Error generating CSV')
+    }
+  } else {
+    success(res, response, 200)
+  }
 })
 
 export { router as tribeRouter }

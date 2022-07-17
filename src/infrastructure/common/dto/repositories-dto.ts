@@ -17,7 +17,7 @@ const ListRepositoriesFromTribeDTO = (repositories: RepositoryDB[], organization
       tribe: tribe.name,
       organization: organization.name,
       coverage: repository.metric.coverage + '%',
-      codeSmell: repository.metric.code_smell,
+      codeSmell: repository.metric.code_smells,
       bugs: repository.metric.bugs,
       vulnerabilities: repository.metric.vulnerabilities,
       hotspots: repository.metric.hotspots,

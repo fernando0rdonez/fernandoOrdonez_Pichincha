@@ -7,7 +7,6 @@ import { Organization } from '../../infrastructure/db/models/organization'
 
 const listTibreRepositories = async (id: string, queryParams:QueryParamsTribe): Promise<ResponseCaseUse> => {
   const tribe = await Tribe.findByPk(id)
-  console.log(queryParams)
 
   if (!tribe) {
     return { data: { message: 'The Tribe is not registered' }, error: true }
@@ -29,7 +28,7 @@ const listTibreRepositories = async (id: string, queryParams:QueryParamsTribe): 
   })
 
   if (!response) {
-    return { data: { message: 'La Tribu no tiene repositorios que cumplan con la cobertura necesaria' }, error: true }
+    return { data: { message: 'The Tribe does not have repositories with the necessary coverage' }, error: true }
   }
   return { data: response, error: false }
 }

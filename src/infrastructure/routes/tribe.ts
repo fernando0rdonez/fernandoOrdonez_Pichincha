@@ -22,7 +22,6 @@ router.get('/:id', [
 ], requestValidate, async (req: Request, res: Response) => {
   const { id } = req.params
   const queryParams = {} as QueryParamsTribe
-  console.log(req.query)
 
   queryParams.state = req.query.status as State || 'E'
   queryParams.coverage = Number(req.query.coverage) || 70

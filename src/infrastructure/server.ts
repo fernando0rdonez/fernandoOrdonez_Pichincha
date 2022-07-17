@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
+import 'express-async-errors'
 
 import { routes } from './router'
 import { errorHandler } from './middleware/error-handler'

@@ -1,22 +1,10 @@
-import { ListRepositoriesMock } from '../interfaces/mocks'
+import { Repository } from '../../infrastructure/db/models/repository'
+import { ResponseCaseUse } from '../interfaces/common'
 
-const listRepository = (): ListRepositoriesMock => {
-  return {
-    repositories: [
-      {
-        id: 1,
-        state: 604
-      },
-      {
-        id: 2,
-        state: 605
-      },
-      {
-        id: 3,
-        state: 606
-      }
-    ]
-  }
+const listRepository = async (): Promise<ResponseCaseUse> => {
+  const repostories = await Repository.findAll()
+
+  return { data: repostories, error: false }
 }
 
 export { listRepository }

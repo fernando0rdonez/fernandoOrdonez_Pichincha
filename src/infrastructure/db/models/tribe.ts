@@ -4,7 +4,7 @@ import { sequelize } from '../config'
 export const Tribe = sequelize.define(
   'tribe',
   {
-    id: {
+    id_tribe: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true

@@ -6,7 +6,7 @@ interface IOrganizationDTO {
 export const listOrganizationDTO = (orgs: any[]): IOrganizationDTO[] => {
   const response = orgs.map(org => {
     return {
-      id: org.id,
+      id: org.id_organization,
       name: org.name,
       status: org.status
     }
@@ -16,7 +16,7 @@ export const listOrganizationDTO = (orgs: any[]): IOrganizationDTO[] => {
 
 export const organizationDTO = (org: any): IOrganizationDTO => {
   return {
-    id: org.id,
+    id: org.id_organization,
     name: org.name,
     status: org.status
   }

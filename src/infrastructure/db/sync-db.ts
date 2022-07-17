@@ -3,7 +3,7 @@ import { sequelize } from './config'
 import './models/'
 
 const sync = async () => {
-  await sequelize.sync({ force: false })
+  await sequelize.authenticate()
 }
 
 export default sync

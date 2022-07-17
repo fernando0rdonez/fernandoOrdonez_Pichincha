@@ -9,7 +9,7 @@ export const Metrics = sequelize.define(
       primaryKey: true
     },
     coverage: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.DOUBLE,
       allowNull: false
     },
     bugs: {
@@ -28,4 +28,7 @@ export const Metrics = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: false
     }
+  },
+  {
+    timestamps: false
   })

@@ -8,7 +8,7 @@ export const listOrganizationDTO = (orgs: any[]): IOrganizationDTO[] => {
     return {
       id: org.id_organization,
       name: org.name,
-      status: org.status
+      status: Number(org.status)
     }
   })
   return response

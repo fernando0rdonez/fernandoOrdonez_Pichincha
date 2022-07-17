@@ -1,7 +1,7 @@
 import { Metrics } from './metric'
 
-export type Status = 'E' | 'D' | 'A'
-type State = 'A' | 'I'
+export type State = 'E' | 'D' | 'A'
+type Status = 'A' | 'I'
 
 export interface Repository {
   id_repository: string,

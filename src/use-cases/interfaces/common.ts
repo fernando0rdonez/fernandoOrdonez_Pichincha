@@ -1,11 +1,11 @@
-import { Status } from './repository'
+import { State } from './repository'
 export interface ResponseCaseUse {
   data : any,
   error : boolean
 }
 
 export interface QueryParamsTribe {
-  status: Status,
+  state: State,
   coverage: number,
   startDate: Date,
   endDate: Date

@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node dist/index.js",
     "build": "tsc -p .",
     "lint": "eslint",
-    "start": "ts-node-dev src/index.ts",
+    "dev": "ts-node-dev src/index.ts",
     "test": "jest --watchAll --no-cache"
   },
   "keywords": [],

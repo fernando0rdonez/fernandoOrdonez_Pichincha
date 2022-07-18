@@ -8,5 +8,6 @@ services:
       - "3001:3001"
     environment:
       - SERVER_PORT=${SERVER_PORT}
+      - PORT=${PORT}
       - HOST_URL=${HOST_URL}
       - DATABASE_URL=${DATABASE_URL}

@@ -6,8 +6,8 @@ dotenv.config()
 
 async function start () {
   await sync()
-  server.listen(process.env.SERVER_PORT, () => {
-    console.log(`listen in port ${process.env.SERVER_PORT}`)
+  server.listen(process.env.PORT, () => {
+    console.log(`listen in port ${process.env.PORT}`)
   })
 }
 

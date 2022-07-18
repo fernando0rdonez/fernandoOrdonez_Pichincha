@@ -17,8 +17,7 @@ jobs:
           node-version: 16
       - name: Install dependencies
         run: npm install --no-audit --no-found --no-optional
-      - name: Run test
-        run: npm run test
+
       - name: Deploy to heroku
         uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:

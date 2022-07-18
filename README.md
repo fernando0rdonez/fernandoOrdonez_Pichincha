@@ -16,7 +16,11 @@ npm start
 https://documenter.getpostman.com/view/6049635/UzQvtkD8
 ```
 
-
+> the env file is storage for review purpose
+run this command inside the project folder
+```
+docker compose --env-file=.env up 
+```
 ###
 
 <h2 align="left">I code with</h2>

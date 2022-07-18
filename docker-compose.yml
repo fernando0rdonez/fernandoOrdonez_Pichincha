@@ -1,0 +1,12 @@
+version: "3.9" # optional since v1.27.0
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - SERVER_PORT=${SERVER_PORT}
+      - HOST_URL=${HOST_URL}
+      - DATABASE_URL=${DATABASE_URL}
